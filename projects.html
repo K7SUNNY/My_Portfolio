@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Portfolio/Projects</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<div class="nav_container">
+		<div class="logo_text"><h2>My Portfolio</h2></div>
+		<div class="nav">
+			<nav>
+				<a href="index.html">Home</a>
+				<!-- Trigger button -->
+				<a href="#" id="aboutBtn">About</a>
+
+				<!-- Popup Window -->
+				<div id="aboutPopup" class="popup">
+					<div class="popup-content">
+						<span class="close-btn">&times;</span>
+						<h2>About Me</h2>
+						<p>Hey! I'm Sunny, a passionate coder and student. I love building apps like BalanceX, Websites like Movers & Packers and dreaming big. 😎🔥</p>
+					</div>
+				</div>
+
+				<a href="projects.html">Projects</a>
+				<a href="#skills">Skills</a>
+				<a href="#contact">Contact</a>
+			</nav>
+		</div>
+	</div>
+	<div class="main-body">
+		<h1>Projects I’ve Built</h1>
+		<p id="info">Over time, I’ve worked on several coding projects — from websites to Android apps. I enjoy turning ideas into		functional tools and experimenting with new things as I learn.
+			Below are some of the main projects I’ve built so far.
+		</p>
+		<div class="project-card02">
+			<div class="h001">
+				<h2>BalanceX – Smart Accounting, Simplified</h2>
+				<p>
+					BalanceX is a simple yet powerful accounting app designed for everyday use. It allows users to easily add credits and debits, check their total balance, and track all expenses with clean and clear graphs.
+					Built in Java, the app is lightweight, user-friendly, and ideal for managing personal finances without any complexity.
+				</p>
+			</div>
+			<div class="application-images">
+				<img src="BalanceX001.jpg">
+				<img src="BalanceX002.jpg">
+				<img src="BalanceX003.jpg">
+			</div>
+		</div>
+		<div class="project-card02">
+			<div class="h001">
+				<h2>Movers & Packers - Smiple portal to connect with experts</h2>
+				<p>
+					This website is all about connecting customers to the company and give them infos and company overviews and some infos about how they and with what they work.<br>
+					This was also the first website that i sold when i was in High School.
+				</p>
+			</div>
+			<div class="application-images02">
+				<img src="transportation001.png">
+				<img src="transportation002.png">
+				<img src="transportation003.png">
+				<img src="transportation004.png">
+			</div>
+			<div>
+				<p>
+					More imaegs for this website, you can visit my github:<a href="https://k7sunny.github.io/Mover-Packers/" target="_blank"> click here</a> 
+				</p>
+			</div>
+		</div>
+	</div>
+	<footer>
+		<p>© 2025 Sunny Singh Rajput. All rights reserved.</p>
+	</footer>
+	<script>
+		const aboutBtn = document.getElementById("aboutBtn");
+		const popup = document.getElementById("aboutPopup");
+		const closeBtn = document.querySelector(".close-btn");
+
+		aboutBtn.addEventListener("click", function(e) {
+        e.preventDefault(); // stop that weird # jump
+        popup.style.display = "flex";
+    });
+
+		closeBtn.addEventListener("click", function() {
+			popup.style.display = "none";
+		});
+
+    // Close if clicked outside the popup content
+		window.addEventListener("click", function(e) {
+			if (e.target === popup) {
+				popup.style.display = "none";
+			}
+		});
+	</script>
+</body>
+</html>
