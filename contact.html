@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Portfolio/Contact</title>
-  <link rel="icon" type="img" href="my_avatar.jpg">
+  <link rel="icon" type="image/jpeg" href="my_avatar.jpg">
   <style>
     * {
       margin: 0;
@@ -12,10 +12,9 @@
       box-sizing: border-box;
     }
 
-    /* Hide scrollbars across all browsers */
     html, body {
-      scrollbar-width: none; /* Firefox */
-      -ms-overflow-style: none; /* IE and Edge */
+      scrollbar-width: none;
+      -ms-overflow-style: none;
     }
     html::-webkit-scrollbar,
     body::-webkit-scrollbar {
@@ -35,15 +34,18 @@
       justify-content: space-between;
       align-items: center;
       padding: 1% 5%;
-      background-color: #fff;
+      background: linear-gradient(135deg, #ffffff, #e6f0ff);
       position: sticky;
       top: 0;
       z-index: 1000;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     }
 
     .nav_container h2 {
-      color: #325c9c;
-      font-size: 1.5rem;
+      color: #1e3a8a;
+      font-size: 1.6rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
     }
 
     .nav {
@@ -54,23 +56,25 @@
     }
 
     .nav a {
-      margin: 10px;
       text-decoration: none;
-      color: #007BFF;
-      font-weight: bold;
-      transition: color 0.3s ease, transform 0.3s ease;
+      color: #2563eb;
+      font-weight: 600;
+      font-size: 1rem;
+      padding: 8px 16px;
+      border-radius: 5px;
+      transition: all 0.3s ease;
     }
 
     .nav a:hover {
-      color: #325c9c;
+      color: #ffffff;
+      background-color: #1e3a8a;
       transform: translateY(-2px);
     }
 
-    /* Hamburger Menu */
     .hamburger {
       display: none;
-      color: #325c9c;
-      font-size: 1.5rem;
+      color: #1e3a8a;
+      font-size: 1.8rem;
       cursor: pointer;
       transition: transform 0.3s ease;
     }
@@ -79,7 +83,6 @@
       transform: rotate(90deg);
     }
 
-    /* Popup Styling */
     .popup {
       display: none;
       position: fixed;
@@ -87,38 +90,38 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background-color: rgba(0, 0, 0, 0.6);
+      background-color: rgba(0, 0, 0, 0.7);
       justify-content: center;
       align-items: center;
       z-index: 1000;
     }
 
     .popup-content {
-      background-color: #fff;
-      padding: 30px;
+      background: linear-gradient(145deg, #ffffff, #f0f7ff);
+      padding: 40px;
       width: 90%;
-      max-width: 500px;
-      border-radius: 15px;
+      max-width: 550px;
+      border-radius: 20px;
       text-align: center;
-      box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
-      animation: popupFade 0.3s ease-in-out;
+      box-shadow: 0 5px 25px rgba(0, 0, 0, 0.3);
+      animation: popupFade 0.4s ease-in-out;
     }
 
     .close-btn {
       float: right;
-      font-size: 24px;
+      font-size: 28px;
       cursor: pointer;
-      color: #888;
+      color: #666;
       transition: color 0.3s ease;
     }
 
     .close-btn:hover {
-      color: #325c9c;
+      color: #1e3a8a;
     }
 
     @keyframes popupFade {
       from {
-        transform: scale(0.8);
+        transform: scale(0.7);
         opacity: 0;
       }
       to {
@@ -129,8 +132,8 @@
 
     /* ========== CONTACT SECTION ========== */
     .contact-container {
-      padding: 40px 20px;
-      max-width: 800px;
+      padding: 50px 20px;
+      max-width: 900px;
       margin: 0 auto;
       opacity: 0;
       animation: fadeIn 1s ease-out 0.2s forwards;
@@ -148,35 +151,44 @@
     }
 
     .contact-container h1 {
-      font-size: 28px;
-      color: #325c9c;
+      font-size: 2.5rem;
+      color: #1e3a8a;
       text-align: center;
-      margin-bottom: 20px;
+      margin-bottom: 25px;
+      font-weight: 700;
+      letter-spacing: 1px;
     }
 
     .contact-container p {
       text-align: center;
-      margin-bottom: 30px;
-      color: #555;
+      margin-bottom: 35px;
+      font-size: 1.2rem;
+      color: #4b5563;
       opacity: 0;
       animation: fadeIn 1s ease-out 0.4s forwards;
     }
 
     .contact-form {
-      background-color: white;
-      padding: 20px;
-      border-radius: 12px;
-      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+      background: linear-gradient(145deg, #ffffff, #f8fafc);
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
       display: flex;
       flex-direction: column;
-      gap: 20px;
+      gap: 25px;
       opacity: 0;
       animation: slideInUp 0.6s ease-out 0.6s forwards;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .contact-form:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
     }
 
     @keyframes slideInUp {
       from {
-        transform: translateY(30px);
+        transform: translateY(40px);
         opacity: 0;
       }
       to {
@@ -186,59 +198,64 @@
     }
 
     .contact-form label {
-      font-weight: bold;
-      color: #333;
+      font-weight: 600;
+      color: #1e3a8a;
+      font-size: 1.1rem;
     }
 
     .contact-form input,
     .contact-form textarea {
       width: 100%;
-      padding: 10px;
-      border: 2px solid #325c9c;
+      padding: 12px;
+      border: 2px solid #2563eb;
       border-radius: 8px;
-      font-size: 1em;
+      font-size: 1rem;
       color: #333;
-      transition: border-color 0.3s ease, transform 0.3s ease;
+      background-color: #f8fafc;
+      transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
     }
 
     .contact-form input:focus,
     .contact-form textarea:focus {
-      border-color: #007BFF;
+      border-color: #1e3a8a;
       outline: none;
-      transform: scale(1.02);
+      transform: scale(1.01);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     }
 
     .contact-form textarea {
       resize: vertical;
-      min-height: 100px;
+      min-height: 120px;
     }
 
     .contact-form button {
       display: inline-block;
-      padding: 10px 20px;
-      background-color: #0056b3;
-      color: white;
-      letter-spacing: 3px;
-      border-radius: 10px;
-      border: 2px solid #325c9c;
-      font-weight: bold;
+      padding: 12px 25px;
+      background-color: #2563eb;
+      color: #ffffff;
+      letter-spacing: 2px;
+      border-radius: 8px;
+      border: 2px solid #2563eb;
+      font-weight: 600;
       text-decoration: none;
       cursor: pointer;
-      transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+      transition: all 0.3s ease;
     }
 
     .contact-form button:hover {
       background-color: transparent;
-      color: #0056b3;
+      color: #2563eb;
       transform: translateY(-3px);
     }
 
     /* ========== FOOTER ========== */
     footer {
       text-align: center;
-      padding: 20px;
-      background-color: #fff;
-      border-top: 1px solid #ddd;
+      padding: 30px;
+      background: linear-gradient(135deg, #ffffff, #e6f0ff);
+      border-top: 1px solid #e0e7ff;
+      font-size: 0.95rem;
+      color: #4b5563;
       opacity: 0;
       animation: fadeIn 1s ease-out 0.8s forwards;
     }
@@ -247,19 +264,21 @@
     @media (max-width: 768px) {
       .nav_container {
         flex-wrap: wrap;
+        padding: 15px 5%;
       }
 
       .nav {
         display: none;
         width: 100%;
-        background: #fff;
+        background: #ffffff;
         position: absolute;
-        top: 60px;
+        top: 70px;
         left: 0;
-        padding: 1rem;
+        padding: 1.5rem;
         transform: translateX(-100%);
         opacity: 0;
         transition: transform 0.3s ease, opacity 0.3s ease;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
       }
 
       .nav.active {
@@ -270,8 +289,9 @@
 
       .nav a {
         display: block;
-        margin: 0.5rem 0;
-        font-size: 1.2rem;
+        margin: 0.8rem 0;
+        font-size: 1.3rem;
+        padding: 10px;
       }
 
       .hamburger {
@@ -279,37 +299,37 @@
       }
 
       .contact-container {
-        padding: 30px 10px;
+        padding: 40px 15px;
       }
 
       .contact-form {
-        padding: 15px;
+        padding: 20px;
       }
     }
 
     @media (max-width: 480px) {
       .nav_container h2 {
-        font-size: 1.2rem;
+        font-size: 1.3rem;
       }
 
       .contact-container h1 {
-        font-size: 24px;
+        font-size: 2rem;
       }
 
       .contact-container p {
-        font-size: 1em;
+        font-size: 1.1rem;
       }
 
       .contact-form input,
       .contact-form textarea,
       .contact-form button {
-        font-size: 0.9em;
-        padding: 8px;
+        font-size: 0.95rem;
+        padding: 10px;
       }
 
       .popup-content {
-        padding: 20px;
-        max-width: 90%;
+        padding: 25px;
+        max-width: 95%;
       }
     }
   </style>
@@ -326,11 +346,11 @@
           <div class="popup-content">
             <span class="close-btn">×</span>
             <h2>About Me</h2>
-            <p>Hey! I'm Sunny, a passionate coder and student. I love building apps like BalanceX, Websites like Movers & Packers and dreaming big. 😎🔥</p>
+            <p>Hey! I'm Sunny, a passionate coder and student. I love building apps like BalanceX, websites like Movers & Packers, and AI tools like SparkV1. Always dreaming big and coding bigger! 😎🔥</p>
           </div>
         </div>
         <a href="projects.html">Projects</a>
-        <a href="#skills">Skills</a>
+        <a href="skills.html">Skills</a>
         <a href="contact.html">Contact</a>
       </nav>
     </div>
@@ -379,7 +399,6 @@
       hamburger.textContent = hamburger.classList.contains("active") ? "×" : "☰";
     });
 
-    // Reset scroll position on page load to prevent upward shift
     window.addEventListener("load", function() {
       window.scrollTo(0, 0);
       document.body.style.marginTop = "0";

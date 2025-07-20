@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Portfolio/Projects</title>
+  <title>Portfolio/Skills</title>
   <link rel="icon" type="image/jpeg" href="my_avatar.jpg">
   <style>
     * {
@@ -130,20 +130,11 @@
       }
     }
 
-    /* ========== MAIN BODY ========== */
-    .main-body {
+    /* ========== SKILLS SECTION ========== */
+    .skills-container {
       padding: 50px 20px;
       max-width: 1300px;
       margin: 0 auto;
-    }
-
-    .main-body h1 {
-      font-size: 2.5rem;
-      color: #1e3a8a;
-      text-align: center;
-      margin-bottom: 30px;
-      font-weight: 700;
-      letter-spacing: 1px;
       opacity: 0;
       animation: fadeIn 1s ease-out 0.2s forwards;
     }
@@ -159,35 +150,32 @@
       }
     }
 
-    #info {
-      margin: 2% 5%;
-      padding: 20px;
-      border: 1px solid #e0e7ff;
-      border-radius: 15px;
+    .skills-container h1 {
+      font-size: 2.5rem;
+      color: #1e3a8a;
       text-align: center;
-      background: #ffffff;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+      margin-bottom: 25px;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+
+    .skills-container p {
+      text-align: center;
+      margin-bottom: 35px;
+      font-size: 1.2rem;
+      color: #4b5563;
       opacity: 0;
       animation: fadeIn 1s ease-out 0.4s forwards;
     }
 
-    .project-card02 {
-      display: flex;
-      flex-direction: column;
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 25px;
-      background: linear-gradient(145deg, #ffffff, #f8fafc);
-      padding: 30px;
-      margin: 3% 5%;
-      border-radius: 15px;
-      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+      padding: 0 5%;
       opacity: 0;
-      animation: slideInUp 0.6s ease-out forwards;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      animation: slideInUp 0.6s ease-out 0.6s forwards;
     }
-
-    .project-card02:nth-child(1) { animation-delay: 0.6s; }
-    .project-card02:nth-child(2) { animation-delay: 0.8s; }
-    .project-card02:nth-child(3) { animation-delay: 1s; }
 
     @keyframes slideInUp {
       from {
@@ -200,117 +188,61 @@
       }
     }
 
-    .project-card02:hover {
+    .skill-card {
+      background: linear-gradient(145deg, #ffffff, #f8fafc);
+      padding: 25px;
+      border-radius: 15px;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      opacity: 0;
+      animation: slideInUp 0.6s ease-out forwards;
+    }
+
+    .skill-card:nth-child(1) { animation-delay: 0.8s; }
+    .skill-card:nth-child(2) { animation-delay: 0.9s; }
+    .skill-card:nth-child(3) { animation-delay: 1.0s; }
+    .skill-card:nth-child(4) { animation-delay: 1.1s; }
+
+    .skill-card:hover {
       transform: translateY(-5px);
       box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
     }
 
-    .h001 h2 {
+    .skill-card h3 {
       color: #2563eb;
       font-size: 1.8rem;
-      margin-bottom: 12px;
+      margin-bottom: 15px;
       font-weight: 600;
     }
 
-    .h001 p {
+    .skill-card p {
       color: #4b5563;
       font-size: 1.1rem;
+      margin-bottom: 20px;
     }
 
-    .application-images,
-    .application-images02 {
+    .skill-card .icon {
+      width: 60px;
+      height: 60px;
+      margin: 0 auto 15px;
       display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 20px;
-    }
-
-    .application-images img,
-    .application-images02 img {
-      max-width: 100%;
-      height: auto;
-      border-radius: 12px;
-      box-shadow: 0 3px 15px rgba(0, 0, 0, 0.2);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .application-images img {
-      height: 450px;
-      object-fit: cover;
-    }
-
-    .application-images02 img {
-      height: 280px;
-      width: 550px;
-      object-fit: cover;
-    }
-
-    .application-images img:hover,
-    .application-images02 img:hover {
-      transform: scale(1.03);
-      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.25);
-    }
-
-    .project-card02 > div:last-child p {
-      text-align: center;
-      margin-top: 15px;
-      font-size: 1rem;
-      color: #4b5563;
-    }
-
-    .project-card02 > div:last-child a {
-      color: #2563eb;
-      text-decoration: none;
-      font-weight: 600;
-      padding: 8px 16px;
-      border-radius: 5px;
-      transition: all 0.3s ease;
-    }
-
-    .project-card02 > div:last-child a:hover {
-      color: #ffffff;
-      background-color: #1e3a8a;
-    }
-
-    .notes {
-      display: flex;
-      flex-direction: row;
       align-items: center;
-      gap: 10px;
-      font-size: 0.95rem;
-      color: #4b5563;
-    }
-
-    .notes #note001 {
-      font-weight: 700;
-      color: #1e3a8a;
-    }
-
-    .future-plans {
-      margin-top: 20px;
-      padding: 15px;
-      background: #f1f5f9;
+      justify-content: center;
       border-radius: 10px;
+      background: #e0e7ff;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
     }
 
-    .future-plans ul {
-      list-style-type: none;
-      padding-left: 20px;
+    .skill-card:hover .icon {
+      transform: scale(1.1);
     }
 
-    .future-plans ul li {
-      position: relative;
-      margin-bottom: 10px;
-      font-size: 1rem;
-      color: #4b5563;
-    }
-
-    .future-plans ul li::before {
-      content: "•";
-      position: absolute;
-      left: -20px;
-      color: #2563eb;
-      font-size: 1.2rem;
+    .skill-card .icon img {
+      width: 40px;
+      height: 40px;
+      object-fit: contain;
     }
 
     /* ========== FOOTER ========== */
@@ -363,27 +295,17 @@
         display: block;
       }
 
-      .main-body {
+      .skills-container {
         padding: 40px 15px;
       }
 
-      .project-card02 {
-        margin: 3% 5%;
+      .skills-grid {
+        grid-template-columns: 1fr;
+        padding: 0 5%;
+      }
+
+      .skill-card {
         padding: 20px;
-      }
-
-      .application-images img {
-        height: 280px;
-      }
-
-      .application-images02 img {
-        width: 100%;
-        height: 200px;
-      }
-
-      #info {
-        margin: 2% 5%;
-        padding: 15px;
       }
     }
 
@@ -392,29 +314,35 @@
         font-size: 1.3rem;
       }
 
-      .main-body h1 {
+      .skills-container h1 {
         font-size: 2rem;
       }
 
-      .h001 h2 {
+      .skills-container p {
+        font-size: 1.1rem;
+      }
+
+      .skill-card h3 {
         font-size: 1.5rem;
       }
 
-      .application-images img {
-        height: 200px;
+      .skill-card p {
+        font-size: 1rem;
       }
 
-      .application-images02 img {
-        height: 150px;
+      .skill-card .icon {
+        width: 50px;
+        height: 50px;
+      }
+
+      .skill-card .icon img {
+        width: 35px;
+        height: 35px;
       }
 
       .popup-content {
         padding: 25px;
         max-width: 95%;
-      }
-
-      .project-card02 {
-        padding: 15px;
       }
     }
   </style>
@@ -431,7 +359,7 @@
           <div class="popup-content">
             <span class="close-btn">×</span>
             <h2>About Me</h2>
-            <p>Hey! I'm Sunny, a passionate coder and student. I love building apps like BalanceX, Websites like Movers & Packers, and AI tools like SparkV1. Always dreaming big and coding bigger! 😎🔥</p>
+            <p>Hey! I'm Sunny, a passionate coder and student. I love building apps like BalanceX, websites like Movers & Packers, and AI tools like SparkV1. Always dreaming big and coding bigger! 😎🔥</p>
           </div>
         </div>
         <a href="projects.html">Projects</a>
@@ -440,58 +368,37 @@
       </nav>
     </div>
   </div>
-  <div class="main-body">
-    <h1>Projects I’ve Built</h1>
-    <p id="info">Over time, I’ve worked on several coding projects — from websites to Android apps and AI tools. I enjoy turning ideas into functional tools and experimenting with new technologies as I learn. Below are some of the main projects I’ve built so far.</p>
-    <div class="project-card02">
-      <div class="h001">
-        <h2>BalanceX – Smart Accounting, Simplified</h2>
-        <p>BalanceX is a simple yet powerful accounting app designed for everyday use. It allows users to easily add credits and debits, check their total balance, and track all expenses with clean and clear graphs. Built in Java, the app is lightweight, user-friendly, and ideal for managing personal finances without any complexity.</p>
+  <div class="skills-container">
+    <h1>My Skills</h1>
+    <p>Here’s a look at the technologies and tools I’m proficient in, honed through hands-on projects and continuous learning.</p>
+    <div class="skills-grid">
+      <div class="skill-card">
+        <div class="icon">
+          <img src="java_icon.png" alt="Java Icon">
+        </div>
+        <h3>Java</h3>
+        <p>Experienced in building robust applications like BalanceX and SparkV1 using Java, with a focus on clean code and efficient logic.</p>
       </div>
-      <div class="application-images">
-        <img src="BalanceX001.jpg" alt="BalanceX Screenshot 1">
-        <img src="BalanceX002.jpg" alt="BalanceX Screenshot 2">
-        <img src="BalanceX003.jpg" alt="BalanceX Screenshot 3">
+      <div class="skill-card">
+        <div class="icon">
+          <img src="android_studio_icon.png" alt="Android Studio Icon">
+        </div>
+        <h3>Android Studio</h3>
+        <p>Skilled in developing Android apps with Android Studio, creating user-friendly interfaces and seamless functionality.</p>
       </div>
-      <div class="notes">
-        <p id="note001">Note:</p>
-        <p>This app is still in progress for enhanced UI/UX and functionality.</p>
+      <div class="skill-card">
+        <div class="icon">
+          <img src="html_css_icon.png" alt="HTML/CSS Icon">
+        </div>
+        <h3>HTML / CSS</h3>
+        <p>Proficient in crafting responsive and visually appealing websites, such as Movers & Packers, using HTML and CSS.</p>
       </div>
-    </div>
-    <div class="project-card02">
-      <div class="h001">
-        <h2>Movers & Packers - Simple Portal to Connect with Experts</h2>
-        <p>This website connects customers to the company, providing information, company overviews, and details about their services. This was my first website sold during high school, marking a significant milestone in my coding journey.</p>
-      </div>
-      <div class="application-images02">
-        <img src="transportation001.png" alt="Movers & Packers Screenshot 1">
-        <img src="transportation002.png" alt="Movers & Packers Screenshot 2">
-        <img src="transportation003.png" alt="Movers & Packers Screenshot 3">
-        <img src="transportation004.png" alt="Movers & Packers Screenshot 4">
-      </div>
-      <div>
-        <p>View more images on my GitHub: <a href="https://k7sunny.github.io/Mover-Packers/" target="_blank">Click here</a></p>
-      </div>
-    </div>
-    <div class="project-card02">
-      <div class="h001">
-        <h2>SparkV1 – Personal AI Chatbot App</h2>
-        <p>SparkV1 is a custom AI chatbot app I built for personal use, tailored to my specific needs. Designed with flexibility and personalization in mind, it’s a work in progress as I continue to enhance its capabilities.</p>
-      </div>
-      <div class="application-images">
-        <img src="ic_SparkV1.png" alt="SparkV1 Placeholder" style="filter: grayscale(50%); opacity: 0.8;">
-      </div>
-      <div class="notes">
-        <p id="note001">Note:</p>
-        <p>Visuals are under development as the app is still in progress.</p>
-      </div>
-      <div class="future-plans">
-        <h3>Future Enhancements</h3>
-        <ul>
-          <li>Integrating a custom AI brain for advanced interactions</li>
-          <li>Optimizing for seamless performance on mobile and desktop</li>
-          <li>Adding multiple UI features for enhanced user experience</li>
-        </ul>
+      <div class="skill-card">
+        <div class="icon">
+          <img src="javascript_icon.png" alt="JavaScript Icon">
+        </div>
+        <h3>JavaScript</h3>
+        <p>Adept at adding interactivity to web projects with JavaScript, enhancing user experiences with dynamic features.</p>
       </div>
     </div>
   </div>
